@@ -10,16 +10,15 @@ public:
     std::string nom;
 
 public:
- 
-    Perso();
+
     Perso(std::string nom_, int vie_, int attaque_, int agilite_);
-    void prendredmg (int dmg) {
+    void prendredmg(int dmg) {
         vie -= dmg;
         if (vie <= 0) {
             vie = 0;
         }
     }
-    void attaquer (Perso &cible){
+    void attaquer(Perso& cible) {
         cible.prendredmg(attaque);
 
     }
@@ -30,7 +29,7 @@ public:
 };
 
 
-int main(int argc, char const *argv[])
+int main(int argc, char const* argv[])
 {
     Perso perso1("pablo", 100, 10, 10);
     Perso perso2("miguel", 100, 15, 20);
@@ -43,20 +42,23 @@ int main(int argc, char const *argv[])
     std::cin >> dificulte;
     if (dificulte == 1) {
         std::cout << "facile" << std::endl;
-        mod = 0.5;
-        Perso perso2("miguel", 100*mod, 15*mod, 20*mod);
-    } else if (dificulte == 2) {
+        mod = 0,5;
+        Perso perso2("miguel", 100 * mod, 15 * mod, 20 * mod);
+    }
+    else if (dificulte == 2) {
         std::cout << "normal" << std::endl;
         mod = 1;
-        Perso perso2("miguel", 100*mod, 15*mod, 20*mod);
-    } else if (dificulte == 3) {
+        Perso perso2("juan", 100 * mod, 15 * mod, 20 * mod);
+    }
+    else if (dificulte == 3) {
         std::cout << "dificile" << std::endl;
-        mod = 1.5;
-        Perso perso2("miguel", 100*mod, 15*mod, 20*mod);
-    } else if (dificulte == 4) {
+        mod = 1,5;
+        Perso perso2("benito", 100 * mod, 15 * mod, 20 * mod);
+    }
+    else if (dificulte == 4) {
         std::cout << "impossible" << std::endl;
         mod = 3;
-        Perso perso2("miguel", 100*mod, 15*mod, 20*mod);
+        Perso perso2("juanito", 100 * mod, 15 * mod, 20 * mod);
     }
 
     std::cout << "votre adversaire est " << perso2.nom << std::endl;
